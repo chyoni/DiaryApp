@@ -17,3 +17,13 @@
 - #02 Basic Settings
 
 - #03 Basic Settings 2
+
+- #04 Realm 1
+
+  ```bash
+  npm install realm
+  npx pod-install ios
+
+  expo install expo-app-loading
+  npx pod-install ios
+  ```
