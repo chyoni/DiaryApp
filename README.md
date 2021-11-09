@@ -15,3 +15,5 @@
   ```
 
 - #02 Basic Settings
+
+- #03 Basic Settings 2
