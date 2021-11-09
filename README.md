@@ -13,3 +13,5 @@
   npm install @react-navigation/native-stack
 
   ```
+
+- #02 Basic Settings
