@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Alert } from 'react-native';
+import { DBContext, useDB } from '../context';
 import styled from 'styled-components/native';
 import colors from '../colors';
 
@@ -52,16 +53,29 @@ const EmotionText = styled.Text`
 
 const emojis = ['😃', '🥰', '🤬', '😭', '😵‍💫', '😢', '😞'];
 
-const Write = () => {
+const Write = ({ navigation: { goBack } }) => {
+  const realm = useDB();
   const [selectedEmotion, setSelectedEmotion] = useState(null);
   const [feelings, setFeelings] = useState('');
   const onChangeText = (text) => setFeelings(text);
   const onEmotionPress = (face) => setSelectedEmotion(face);
   const onSubmit = () => {
     if (feelings === '' || selectedEmotion === null) {
-      Alert.alert('hey what the fuck with this?');
+      Alert.alert('Please fill in your feelings.');
+      return;
     }
+    realm.write(() => {
+      realm.create('Feeling', {
+        _id: Date.now(),
+        emotion: selectedEmotion,
+        message: feelings,
+      });
+    });
+    goBack();
   };
+  useEffect(() => {
+    console.log(realm);
+  }, []);
   return (
     <View>
       <Title>How do you feel today?</Title>

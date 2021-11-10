@@ -3,6 +3,7 @@ import Realm from 'realm';
 import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './navigator';
+import { DBContext } from './context';
 
 const FeelingSchema = {
   name: 'Feeling',
@@ -16,12 +17,14 @@ const FeelingSchema = {
 
 export default function App() {
   const [ready, setReady] = useState(false);
+  const [realm, setRealm] = useState(null);
   const onFinish = () => setReady(true);
   const startLoading = async () => {
-    const realm = await Realm.open({
+    const connection = await Realm.open({
       path: 'chyoneeDiaryDB',
       schema: [FeelingSchema],
     });
+    setRealm(connection);
   };
   if (!ready) {
     return (
@@ -33,8 +36,10 @@ export default function App() {
     );
   }
   return (
-    <NavigationContainer>
-      <Navigator />
-    </NavigationContainer>
+    <DBContext.Provider value={realm}>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </DBContext.Provider>
   );
 }
