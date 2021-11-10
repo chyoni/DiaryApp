@@ -73,9 +73,6 @@ const Write = ({ navigation: { goBack } }) => {
     });
     goBack();
   };
-  useEffect(() => {
-    console.log(realm);
-  }, []);
   return (
     <View>
       <Title>How do you feel today?</Title>

@@ -33,3 +33,7 @@
 - #05 Realm 2
 
   - useContext, Realm's write / create
+
+- #06 Realm 3
+
+  - Listening
