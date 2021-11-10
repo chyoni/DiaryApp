@@ -25,7 +25,8 @@
     "react-native-web": "0.17.1",
     "realm": "^10.9.1",
     "styled-components": "^5.3.3",
-    "expo-app-loading": "~1.2.1"
+    "expo-app-loading": "~1.2.1",
+    "expo-ads-admob": "~11.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

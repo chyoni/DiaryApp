@@ -42,3 +42,15 @@
 
   - delete realm object
   - react-native's LayoutAnimation
+
+- #08 How add Advertise for our App
+
+  ```bash
+  expo install expo-ads-admob
+  npx pod-install
+  ```
+
+  - 이번 커밋에서 많은 설정 파일에 AdMob관련 키를 넣었는데 그 키는 데모용이고 만약 내가
+    AdMob 계정을 만들면 거기서 실제 app ID를 줄 것
+
+  ### AdMob Build가 잘 안되서 다음 영상부터 그냥 시청했음 여튼 이렇게 광고를 넣을 수 있음 쉽게
