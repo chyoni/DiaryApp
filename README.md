@@ -37,3 +37,8 @@
 - #06 Realm 3
 
   - Listening
+
+- #07 Realm 4, LayoutAnimation
+
+  - delete realm object
+  - react-native's LayoutAnimation
